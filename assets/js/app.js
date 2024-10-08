@@ -1,3 +1,6 @@
+// URL base de la API
+const API_URL = 'https://67059607031fd46a83107aa1.mockapi.io/alurageek/productos';
+
 // Seleccionar el contenedor donde se mostrarán los productos
 const cardsProductos = document.querySelector('.cards_productos');
 
@@ -5,7 +8,7 @@ const cardsProductos = document.querySelector('.cards_productos');
 const obtenerProductos = async () => {
   try {
     // Realizamos la petición GET a la API
-    const respuesta = await fetch('http://localhost:3000/productos');
+    const respuesta = await fetch(`${API_URL}`);
     const productos = await respuesta.json();
     
     // Recorremos los productos y los agregamos al HTML
@@ -52,7 +55,7 @@ const agregarEventosEliminar = () => {
 // Función para eliminar el producto de la API
 const eliminarProducto = async (id) => {
   try {
-    await fetch(`http://localhost:3000/productos/${id}`, {
+    await fetch(`${API_URL}/${id}`, {
       method: 'DELETE'
     });
   } catch (error) {
@@ -77,7 +80,7 @@ const generarIdUnico = () => {
 const agregarProducto = async (producto) => {
   try {
     // Realizamos la petición POST a la API (en este caso, el JSON local)
-    await fetch('http://localhost:3000/productos', {
+    await fetch(`${API_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
