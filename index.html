@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraGeek</title>
+    <link rel="shortcut icon" href="/assets/img/favicon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="/assets/img/Logo.png" alt="Logo AluraGeek">
+    </header>
+
+    <main class="contenido">
+        <section class="productos">
+            <p>Mis Productos:</p>
+            <div class="cards_productos">
+                <!-- Aquí deben cargar los productos del json -->
+
+            </div>
+
+        </section>
+        <section class="crear_producto">
+            <p>Agregar <br> Producto:</p>
+            <form class="formulario" id="formulario">
+                <fieldset class="formulario_contenido">
+                    <input type="text" placeholder="Nombre del producto" name="nombreProducto" id="nombreProducto" required>
+                    <div class="error-message" id="nombreError"></div>
+                    <input type="text" placeholder="Precio del producto" name="precioProducto" id="precioProducto" required>
+                    <div class="error-message" id="precioError"></div>
+                    <input type="text" placeholder="URL de la imagen" name="imagenProducto" id="imagenProducto" required>
+                    <div class="error-message" id="imagenError"></div>
+                </fieldset>
+                <div class="botones">
+                    <button type="submit" class="btn_enviar" disabled>Enviar</button>
+                    <button type="reset" class="btn_limpiar">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <img src="/assets/img/Logo.png" alt="Logo AluraGeek">
+        <h2>Desarrollado por Fabian Soto</h2>
+        <h3>Alura LATAM - 2024</h3>
+    </footer>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "BB-8",
+      "precio": "$100",
+      "imagen": "/assets/img/bb8.jpg"
+    },
+    {
+      "id": "2",
+      "nombre": "Taza",
+      "precio": "$50",
+      "imagen": "/assets/img/taza.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Game Boy",
+      "precio": "$200",
+      "imagen": "/assets/img/gameboy.jpg"
+    },
+    {
+      "id": "4",
+      "nombre": "BB-8",
+      "precio": "$100",
+      "imagen": "/assets/img/bb8.jpg"
+    },
+    {
+      "id": "5",
+      "nombre": "Taza",
+      "precio": "$50",
+      "imagen": "/assets/img/taza.jpg"
+    },
+    {
+      "id": "6",
+      "nombre": "Game Boy",
+      "precio": "$200",
+      "imagen": "/assets/img/gameboy.jpg"
+    },
+    {
+      "id": "7",
+      "nombre": "BB-8",
+      "precio": "$100",
+      "imagen": "/assets/img/bb8.jpg"
+    },
+    {
+      "id": "8",
+      "nombre": "Taza",
+      "precio": "$50",
+      "imagen": "/assets/img/taza.jpg"
+    },
+    {
+      "id": "9",
+      "nombre": "Game Boy",
+      "precio": "$200",
+      "imagen": "/assets/img/gameboy.jpg"
+    }
+  ]
+}
