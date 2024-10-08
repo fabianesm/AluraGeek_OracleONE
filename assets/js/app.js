@@ -7,7 +7,10 @@ const cardsProductos = document.querySelector('.cards_productos');
 // Función para obtener productos desde la API
 const obtenerProductos = async () => {
   try {
-    // Realizamos la petición GET a la API
+    // Vaciar el contenedor antes de agregar nuevos productos
+    cardsProductos.innerHTML = '';
+
+    // Realizamos la petición GET a la API de MockAPI
     const respuesta = await fetch(`${API_URL}`);
     const productos = await respuesta.json();
     
@@ -30,12 +33,13 @@ const obtenerProductos = async () => {
       cardsProductos.insertAdjacentHTML('beforeend', productoHTML);
     });
 
-    // Añadir evento de clic a los botones de eliminar
+    // Añadir eventos para eliminar productos
     agregarEventosEliminar();
   } catch (error) {
     console.error('Error al obtener productos:', error);
   }
 };
+
 
 // Función para agregar eventos a los botones de eliminar
 const agregarEventosEliminar = () => {
@@ -55,13 +59,46 @@ const agregarEventosEliminar = () => {
 // Función para eliminar el producto de la API
 const eliminarProducto = async (id) => {
   try {
+    // Eliminar el producto de MockAPI
     await fetch(`${API_URL}/${id}`, {
       method: 'DELETE'
     });
+
+    // Eliminar el producto del DOM
+    eliminarProductoDelDOM(id);
+
+    // Mostrar una alerta de éxito
+    Swal.fire({
+      icon: 'success',
+      title: 'Producto eliminado',
+      text: 'El producto ha sido eliminado exitosamente!',
+      timer: 2000,
+      showConfirmButton: false
+    });
+    
   } catch (error) {
     console.error('Error al eliminar el producto:', error);
+
+    // Mostrar una alerta de error
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Hubo un error al eliminar el producto.',
+    });
   }
 };
+
+// Función para eliminar el producto del DOM
+const eliminarProductoDelDOM = (id) => {
+  // Seleccionar el producto en el DOM por su data-id
+  const productoElemento = document.querySelector(`.card_detalles[data-id="${id}"]`);
+  
+  // Si existe el producto, lo removemos del DOM
+  if (productoElemento) {
+    productoElemento.remove();
+  }
+};
+
 
 // Llamamos a la función para mostrar los productos al cargar la página
 document.addEventListener('DOMContentLoaded', obtenerProductos);
@@ -90,8 +127,24 @@ const agregarProducto = async (producto) => {
 
     // Mostrar el producto en la página después de agregarlo
     obtenerProductos();
+
+    // Mostrar una alerta de éxito
+    Swal.fire({
+      icon: 'success',
+      title: 'Producto agregado',
+      text: 'El producto ha sido agregado exitosamente!',
+      timer: 2000,
+      showConfirmButton: false
+    });
   } catch (error) {
     console.error('Error al agregar producto:', error);
+
+    // Mostrar una alerta de error
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Hubo un error al agregar el producto.',
+    });
   }
 };
 
